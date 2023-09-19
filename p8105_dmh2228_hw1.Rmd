@@ -52,3 +52,16 @@ mean(early_january_weather$temp)
 ```
 
 The mean temperature in "early_january_weather" is 39.58212.
+
+## Problem 1: scatter plot of temp and time_hour in "early_january_weather"
+
+```{r}
+plot_df = tibble(
+  x = early_january_weather$time_hour,
+  y = early_january_weather$temp
+)
+
+ggplot(plot_df, aes(x = x, y = y, color = early_january_weather$humid)) + geom_point()
+ggsave("early_january_weather_plot.pdf", height = 5, width = 5)
+```
+
