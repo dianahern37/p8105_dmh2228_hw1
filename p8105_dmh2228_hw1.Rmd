@@ -44,3 +44,11 @@ ncol(early_january_weather)
 ```
 
 "early_january_weather" has 358 rows and 15 columns. 
+
+## Problem 1: mean temperature in "early_january_weather"
+
+```{r}
+mean(early_january_weather$temp)
+```
+
+The mean temperature in "early_january_weather" is 39.58212.
