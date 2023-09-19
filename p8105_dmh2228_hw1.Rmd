@@ -5,4 +5,15 @@ date: "2023-09-19"
 output: github_document
 ---
 
+## Problem 1 and 2: load tidyverse
+
+```{r}
+library(tidyverse)
+```
+
+## Problem 1: load moderndive
+
+```{r}
+library(moderndive)
+```
 
