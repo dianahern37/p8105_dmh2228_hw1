@@ -23,3 +23,14 @@ library(moderndive)
 data("early_january_weather")
 ```
 
+## Problem 1: Descriptive information of "early_january_weather"
+
+```{r, eval = FALSE}
+view(early_january_weather)
+
+head(early_january_weather)
+
+tail(early_january_weather)
+```
+
+"early_january_weather" has 358 observations and 15 variables (origin, year, month, day, hour, temp, dewp, humid, wind_dir, wind_speed, precip, pressure, visib, time_hour).
