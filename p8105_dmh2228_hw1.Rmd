@@ -79,4 +79,40 @@ random_sample_df = tibble(
 )
 ```
 
+## Problem 2: mean of variables in data frame
 
+```{r}
+mean_samp_norm = mean(pull(random_sample_df, norm_samp))
+```
+
+```{r}
+mean_samp_logic = mean(pull(random_sample_df, vec_logical))
+```
+
+```{r}
+mean_samp_char = mean(pull(random_sample_df, vec_char))
+```
+
+There is no mean for vec_char.
+
+```{r}
+mean_samp_factor = mean(pull(random_sample_df, vec_factor))
+```
+
+There is no mean for vec_factor.
+
+## Problem 2: using as.numeric 
+
+```{r, eval = FALSE}
+num_logical = as.numeric(pull(random_sample_df, vec_logical))
+```
+
+```{r, eval = FALSE}
+num_char = as.numeric(pull(random_sample_df, vec_char))
+```
+
+```{r, eval = FALSE}
+num_factor = as.numeric(pull(random_sample_df, vec_factor))
+```
+
+as.numeric works on the logical and factor variables, but not the character variable. For the logical and factor variables, R is able to assign numbers to each case because there are groups. The character variable does not have anything to be classified by. This helps explain why a mean is obtained for the logical variable and not the character variable.
