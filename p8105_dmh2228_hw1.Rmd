@@ -1,7 +1,7 @@
 ---
 title: "p8105_dmh2228_hw1"
 author: "Diana Hernandez"
-date: "2023-09-19"
+date: "2023-09-23"
 output: github_document
 ---
 
@@ -65,7 +65,7 @@ ggplot(plot_df, aes(x = x, y = y, color = early_january_weather$humid)) + geom_p
 ggsave("early_january_weather_plot.pdf", height = 5, width = 5)
 ```
 
-The scatter plot shows fluctuations between temperature and hour. Humidity varies by day.
+The scatter plot shows fluctuations between temperature and hour. Humidity varies by hour and day. The temperature does increase over time in days. 
 
 ## Problem 2: data frame 
 
@@ -89,6 +89,10 @@ mean_samp_norm = mean(pull(random_sample_df, norm_samp))
 mean_samp_logic = mean(pull(random_sample_df, vec_logical))
 ```
 
+Both samp_norm and samp_logic have a mean. 
+
+Note: the mean will change each time random_sample is run because a new random sample of 10 will be generated. 
+
 ```{r}
 mean_samp_char = mean(pull(random_sample_df, vec_char))
 ```
@@ -105,14 +109,10 @@ There is no mean for vec_factor.
 
 ```{r, eval = FALSE}
 num_logical = as.numeric(pull(random_sample_df, vec_logical))
-```
 
-```{r, eval = FALSE}
 num_char = as.numeric(pull(random_sample_df, vec_char))
-```
 
-```{r, eval = FALSE}
 num_factor = as.numeric(pull(random_sample_df, vec_factor))
 ```
 
-as.numeric works on the logical and factor variables, but not the character variable. For the logical and factor variables, R is able to assign numbers to each case because there are groups. The character variable does not have anything to be classified by. This helps explain why a mean is obtained for the logical variable and not the character variable.
+as.numeric works on the logical and factor variables, but not the character variable. For the logical and factor variables, R is able to assign numbers to each case because there are groups. The character variable does not have anything to be classified by. This helps explain why a mean is obtained for the logical variable and not the character variable. To receive a mean, the argument must be numeric or logical, that is why the factor variable did not give a mean.
